@@ -26,7 +26,6 @@ public class AbstractComponents {
     public AbstractComponents(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-
     }
 
     public void waitForElementToAppearBY(By findby) {
@@ -39,7 +38,6 @@ public class AbstractComponents {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(ele));
     }
-
 
     public void goTo() {
         driver.get("https://www.saucedemo.com/");
