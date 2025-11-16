@@ -19,10 +19,7 @@ public class SetUp {
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-
         return driver;
-
     }
 
     @BeforeMethod
@@ -30,12 +27,11 @@ public class SetUp {
         loginpage = new LoginPage(driver);
         loginpage.goTo();
         return loginpage;
-
     }
 
     @AfterTest
     public void close_driver() {
-       // driver.close();
+        // driver.close();
     }
 
 

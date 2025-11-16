@@ -30,5 +30,4 @@ public class LoginPage extends AbstractComponents {
     }
 
 
-
 }

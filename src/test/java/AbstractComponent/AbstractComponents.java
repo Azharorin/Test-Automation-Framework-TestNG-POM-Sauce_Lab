@@ -3,6 +3,7 @@ package AbstractComponent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,28 +14,36 @@ import java.time.Duration;
 public class AbstractComponents {
     public WebDriver driver;
 
-    public AbstractComponents(WebDriver driver){
-        this.driver= driver;
-        PageFactory.initElements(driver,this
-        );
+    @FindBy(xpath = "//button[text()=\"Open Menu\"]")
+    public WebElement openMenuBtn;
+    @FindBy(xpath = "//a[text()=\"Logout\"]")
+    public WebElement logoutLinkText;
+
+    public AbstractComponents(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
 
     }
-    public void  waitForElementToAppearBY(By findby){
+
+    public void waitForElementToAppearBY(By findby) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(findby));
 
     }
 
-    public void waitForElementToAppear_ByWebElement(WebElement findBy){
-        WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(10));
+    public void waitForElementToAppear_ByWebElement(WebElement findBy) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(findBy));
     }
 
-    public void goTo(){
+    public void goTo() {
         driver.get("https://www.saucedemo.com/");
     }
 
-
+    public void do_Logout() {
+        openMenuBtn.click();
+        logoutLinkText.click();
+    }
 
 
 }
