@@ -18,6 +18,10 @@ public class AbstractComponents {
     public WebElement openMenuBtn;
     @FindBy(xpath = "//a[text()=\"Logout\"]")
     public WebElement logoutLinkText;
+    @FindBy(xpath = "//button[text()=\"Back Home\"]/.")
+    public WebElement backInHomeBtn;
+    @FindBy(xpath = "//button[text()=\"Finish\"]/.")
+    public WebElement finishButton;
 
     public AbstractComponents(WebDriver driver) {
         this.driver = driver;
@@ -31,13 +35,22 @@ public class AbstractComponents {
 
     }
 
-    public void waitForElementToAppear_ByWebElement(WebElement findBy) {
+    public void waitForElementToAppear_ByWebElement(WebElement ele) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(findBy));
+        wait.until(ExpectedConditions.visibilityOf(ele));
     }
+
 
     public void goTo() {
         driver.get("https://www.saucedemo.com/");
+    }
+
+    public void finishCheckOut() {
+        finishButton.click();
+    }
+
+    public void backIn_Home() {
+        backInHomeBtn.click();
     }
 
     public void do_Logout() {

@@ -26,9 +26,11 @@ public class AddToCart extends AbstractComponents {
         return inventoryItemNameTxt.getText();
     }
 
-    public void addToCart_Product() {
+    public CheckOut addToCart_Product() {
         addToCartBtn.click();
         shoppingCartLink.click();
+        CheckOut checkOut=new CheckOut(driver);
+        return checkOut;
 
 
     }
