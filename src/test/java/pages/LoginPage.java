@@ -10,26 +10,24 @@ public class LoginPage extends AbstractComponents {
     public WebDriver driver;
     @FindBy(xpath = "//input[@name=\"user-name\"]")
     public WebElement nameTxt;
-    @FindBy(xpath="//input[@name=\"password\"]")
+    @FindBy(xpath = "//input[@name=\"password\"]")
     public WebElement passwordTxt;
-    @FindBy(xpath="//input[@name=\"login-button\"]")
+    @FindBy(xpath = "//input[@name=\"login-button\"]")
     public WebElement loginButton;
 
-    public LoginPage(WebDriver driver){
+    public LoginPage(WebDriver driver) {
         super(driver);
-        this.driver =driver;
-        PageFactory.initElements(driver,this);
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
-    public void do_login(String  userName, String Password){
+    public AddToCart do_Login(String userName, String Password) {
         nameTxt.sendKeys(userName);
         passwordTxt.sendKeys(Password);
         loginButton.click();
-
-
-
+        AddToCart addToCart = new AddToCart(driver);
+        return addToCart;
     }
-
 
 
 
