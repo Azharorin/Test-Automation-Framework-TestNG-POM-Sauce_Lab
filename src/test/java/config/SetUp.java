@@ -19,7 +19,7 @@ public class SetUp {
     public WebDriver driver;
     public LoginPage loginpage;
 
-    @BeforeTest
+    @BeforeMethod
     public WebDriver setUp() throws IOException {
 /*        Properties prop = new Properties();
         FileInputStream fis = new FileInputStream("C:\\Users\\azhar.alam\\IdeaProjects\\testNG-automation-framework-SwagLabs\\src\\test\\resources\\properties");
