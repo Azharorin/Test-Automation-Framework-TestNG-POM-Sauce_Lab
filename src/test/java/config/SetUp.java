@@ -19,7 +19,7 @@ public class SetUp {
     public WebDriver driver;
     public LoginPage loginpage;
 
-    @BeforeTest
+    @BeforeMethod
     public WebDriver setUp() throws IOException {
 /*        Properties prop = new Properties();
         FileInputStream fis = new FileInputStream("C:\\Users\\azhar.alam\\IdeaProjects\\testNG-automation-framework-SwagLabs\\src\\test\\resources\\properties");
@@ -61,6 +61,8 @@ public class SetUp {
         driver = new FirefoxDriver(options);
         // driver = new FirefoxDriver();
         //  driver.get("https://www.saucedemo.com/");
+        driver.get("https://www.saucedemo.com/");
+
 
 
         driver.manage().window().maximize();
@@ -70,9 +72,11 @@ public class SetUp {
 
     @BeforeMethod
     public LoginPage launchApplication() {
-        loginpage = new LoginPage(driver);
 
-        loginpage.goTo();
+        loginpage = new LoginPage(driver);
+        //loginpage.goTo();
+
+
         return loginpage;
     }
 
