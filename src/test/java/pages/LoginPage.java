@@ -8,11 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends AbstractComponents {
     public WebDriver driver;
-    @FindBy(xpath = "//input[@name=\"user-name\"]")
+    @FindBy(xpath = "//input[@name='user-name']")
     public WebElement nameTxt;
-    @FindBy(xpath = "//input[@name=\"password\"]")
+    @FindBy(xpath = "//input[@name='password']")
     public WebElement passwordTxt;
-    @FindBy(xpath = "//input[@name=\"login-button\"]")
+    @FindBy(xpath = "//input[@name='login-button']")
     public WebElement loginButton;
 
     public LoginPage(WebDriver driver) {

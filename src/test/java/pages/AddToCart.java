@@ -9,11 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 public class AddToCart extends AbstractComponents {
 
     public WebDriver driver;
-    @FindBy(xpath = "//button[@name=\"add-to-cart-sauce-labs-backpack\"]")
+    @FindBy(xpath = "//button[@name='add-to-cart-sauce-labs-backpack']")
     public WebElement addToCartBtn;
-    @FindBy(xpath = "//div//a[@class=\"shopping_cart_link\"]/.")
+    @FindBy(xpath = "//div//a[@class='shopping_cart_link']/.")
     public WebElement shoppingCartLink;
-    @FindBy(xpath = "//div[text()=\"Sauce Labs Backpack\"]")
+    @FindBy(xpath = "//div[text()='Sauce Labs Backpack']")
     public WebElement inventoryItemNameTxt;
 
     public AddToCart(WebDriver driver) {

@@ -9,20 +9,20 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CheckOut extends AbstractComponents {
     public WebDriver driver;
-    @FindBy(xpath = "//button[text()=\"Checkout\"]")
+    @FindBy(xpath = "//button[text()='Checkout']")
     public WebElement checkoutBtn;
-    @FindBy(xpath = "//input[@name=\"firstName\"]")
+    @FindBy(xpath = "//input[@name='firstName']")
     public WebElement firstNameTxt;
-    @FindBy(xpath = "//input[@placeholder=\"Last Name\"]")
+    @FindBy(xpath = "//input[@placeholder='Last Name']")
     public WebElement lastNameTxt;
-    @FindBy(xpath = "//input[@name=\"postalCode\"]")
+    @FindBy(xpath = "//input[@name='postalCode']")
     public WebElement postalCode;
-    @FindBy(xpath = "//input[@id=\"continue\"]")
+    @FindBy(xpath = "//input[@id='continue']")
     public WebElement continueButton;
     @FindBy(xpath = "//div[text()='Payment Information:']/.")
     public WebElement paymentInformationLabelTxt;
     //public By paymentInformationLabelTxt = By.xpath("//div[text()='Payment Information:']");
-    @FindBy(xpath = "//h2[text()=\"Thank you for your order!\"]/.")
+    @FindBy(xpath = "//h2[text()='Thank you for your order!']/.")
     public WebElement headerTxt;
 
     public CheckOut(WebDriver driver) {
