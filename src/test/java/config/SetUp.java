@@ -22,7 +22,7 @@ public class SetUp {
 
     @BeforeClass
     public WebDriver setUp() throws IOException {
-       Properties prop = new Properties();
+        Properties prop = new Properties();
         FileInputStream fis = new FileInputStream("C:\\Users\\azhar.alam\\IdeaProjects\\testNG-automation-framework-SwagLabs\\src\\test\\resources\\properties");
         prop.load(fis);
         String browserName = prop.getProperty("browser");
@@ -48,23 +48,12 @@ public class SetUp {
             EdgeOptions options = new EdgeOptions();
             if (headless) {
                 options.addArguments("--headless");
-               options.addArguments("--window-size=1920,1080");
+                options.addArguments("--window-size=1920,1080");
             }
-            driver = new EdgeDriver();
+            driver = new EdgeDriver(options);
         } else {
             throw new IllegalArgumentException("Unsupported browser: " + browserName);
         }
-       /* FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--headless"); // required for Jenkins
-        options.addArguments("--window-size=1920,1080");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        driver = new FirefoxDriver(options);
-        // driver = new FirefoxDriver();
-          //driver.get("https://www.saucedemo.com/");*/
-
-
-
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         return driver;

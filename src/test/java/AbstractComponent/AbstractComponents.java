@@ -12,34 +12,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class AbstractComponents {
-   public WebDriver driver;
-
-   /* @FindBy(xpath = "//button[text()='Open Menu']")
+    public WebDriver driver;
+    @FindBy(xpath = "//button[text()='Open Menu']")
     public WebElement openMenuBtn;
     @FindBy(xpath = "//a[text()='Logout']")
     public WebElement logoutLinkText;
-    @FindBy(xpath = "//button[text()='Back Home']/.")
-    public WebElement backInHomeBtn;
-    @FindBy(xpath ="//button[text()='Finish'])")
-    public WebElement finishButton;*/
-   @FindBy(xpath = "//button[text()='Open Menu']")
-   public WebElement openMenuBtn;
-
-    @FindBy(xpath = "//a[text()='Logout']")
-    public WebElement logoutLinkText;
-
     @FindBy(xpath = "//button[text()='Back Home']")
     public WebElement backInHomeBtn;
-
     @FindBy(xpath = "//button[text()='Finish']")
     public WebElement finishButton;
-
 
     public AbstractComponents(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
 
     public void waitForElementToAppearBY(By findby) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -47,8 +33,7 @@ public class AbstractComponents {
         wait.until(ExpectedConditions.visibilityOfElementLocated(findby));
 
     }
-
-    public void waitForElementToAppear_ByWebElement(WebElement ele) {
+    public void waitForElementToAppearByWebElement(WebElement ele) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(ele));
     }

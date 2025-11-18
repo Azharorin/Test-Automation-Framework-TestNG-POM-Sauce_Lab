@@ -23,6 +23,7 @@ public class AddToCart extends AbstractComponents {
     }
 
     public String getInventoryItemName() {
+
         return inventoryItemNameTxt.getText();
     }
 
