@@ -54,6 +54,8 @@ public class AbstractComponents {
     }
 
     public void goTo() {
+        driver.get("https://www.saucedemo.com/");
+
     }
 
     public void finishCheckOut() {
