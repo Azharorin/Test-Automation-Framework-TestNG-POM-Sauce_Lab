@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.*;
@@ -21,13 +22,13 @@ public class SetUp {
 
     @BeforeClass
     public WebDriver setUp() throws IOException {
-/*        Properties prop = new Properties();
+       Properties prop = new Properties();
         FileInputStream fis = new FileInputStream("C:\\Users\\azhar.alam\\IdeaProjects\\testNG-automation-framework-SwagLabs\\src\\test\\resources\\properties");
         prop.load(fis);
         String browserName = prop.getProperty("browser");
-        boolean headless = Boolean.parseBoolean(prop.getProperty("headless", "false"));*/
+        boolean headless = Boolean.parseBoolean(prop.getProperty("headless", "false"));
 
-       /* if (browserName.equalsIgnoreCase("chrome")) {
+        if (browserName.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
             if (headless) {
                 options.addArguments("--headless");
@@ -44,23 +45,23 @@ public class SetUp {
             }
             driver = new FirefoxDriver(options);
         } else if (browserName.equalsIgnoreCase("edge")) {
-           *//* EdgeOptions options = new EdgeOptions();
+            EdgeOptions options = new EdgeOptions();
             if (headless) {
                 options.addArguments("--headless");
                options.addArguments("--window-size=1920,1080");
-            }*//*
+            }
             driver = new EdgeDriver();
         } else {
             throw new IllegalArgumentException("Unsupported browser: " + browserName);
-        }*/
-        FirefoxOptions options = new FirefoxOptions();
+        }
+       /* FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless"); // required for Jenkins
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         driver = new FirefoxDriver(options);
         // driver = new FirefoxDriver();
-          //driver.get("https://www.saucedemo.com/");
+          //driver.get("https://www.saucedemo.com/");*/
 
 
 
@@ -74,8 +75,6 @@ public class SetUp {
 
         loginpage = new LoginPage(driver);
         loginpage.goTo();
-
-
         return loginpage;
     }
 
