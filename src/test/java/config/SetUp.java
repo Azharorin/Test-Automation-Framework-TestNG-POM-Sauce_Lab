@@ -60,7 +60,7 @@ public class SetUp {
         options.addArguments("--disable-dev-shm-usage");
         driver = new FirefoxDriver(options);
         // driver = new FirefoxDriver();
-        //  driver.get("https://www.saucedemo.com/");
+          driver.get("https://www.saucedemo.com/");
 
 
 
@@ -73,7 +73,7 @@ public class SetUp {
     public LoginPage launchApplication() {
 
         loginpage = new LoginPage(driver);
-        loginpage.goTo();
+       // loginpage.goTo();
 
 
         return loginpage;
