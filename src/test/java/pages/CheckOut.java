@@ -41,7 +41,7 @@ public class CheckOut extends AbstractComponents {
     }
 
     public String paymentInformationLabel() {
-        waitForElementToAppear_ByWebElement(paymentInformationLabelTxt);
+        waitForElementToAppearByWebElement(paymentInformationLabelTxt);
         return paymentInformationLabelTxt.getText();
     }
 
