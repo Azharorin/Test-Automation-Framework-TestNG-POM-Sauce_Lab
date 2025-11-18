@@ -14,14 +14,26 @@ import java.time.Duration;
 public class AbstractComponents {
    public WebDriver driver;
 
-    @FindBy(xpath = "//button[text()='Open Menu']")
+   /* @FindBy(xpath = "//button[text()='Open Menu']")
     public WebElement openMenuBtn;
     @FindBy(xpath = "//a[text()='Logout']")
     public WebElement logoutLinkText;
     @FindBy(xpath = "//button[text()='Back Home']/.")
     public WebElement backInHomeBtn;
-    @FindBy(xpath = "//button[text()='Finish']/.")
+    @FindBy(xpath ="//button[text()='Finish'])")
+    public WebElement finishButton;*/
+   @FindBy(xpath = "//button[text()='Open Menu']")
+   public WebElement openMenuBtn;
+
+    @FindBy(xpath = "//a[text()='Logout']")
+    public WebElement logoutLinkText;
+
+    @FindBy(xpath = "//button[text()='Back Home']")
+    public WebElement backInHomeBtn;
+
+    @FindBy(xpath = "//button[text()='Finish']")
     public WebElement finishButton;
+
 
     public AbstractComponents(WebDriver driver) {
         this.driver = driver;
