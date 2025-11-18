@@ -53,7 +53,7 @@ public class SetUp {
         } else {
             throw new IllegalArgumentException("Unsupported browser: " + browserName);
         }*/
-        driver = new EdgeDriver();
+        driver = new FirefoxDriver();
       //  driver.get("https://www.saucedemo.com/");
 
 
