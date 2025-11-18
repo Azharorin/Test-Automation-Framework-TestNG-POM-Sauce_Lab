@@ -19,11 +19,12 @@ public class CheckOut extends AbstractComponents {
     public WebElement postalCode;
     @FindBy(xpath = "//input[@id='continue']")
     public WebElement continueButton;
-    @FindBy(xpath = "//div[text()='Payment Information:']/.")
+    @FindBy(xpath = "//div[text()='Payment Information:']")
     public WebElement paymentInformationLabelTxt;
-    //public By paymentInformationLabelTxt = By.xpath("//div[text()='Payment Information:']");
-    @FindBy(xpath = "//h2[text()='Thank you for your order!']/.")
+
+    @FindBy(xpath = "//h2[text()='Thank you for your order!']")
     public WebElement headerTxt;
+
 
     public CheckOut(WebDriver driver) {
         super(driver);
